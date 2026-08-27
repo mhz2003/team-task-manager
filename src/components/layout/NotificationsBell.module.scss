@@ -1,0 +1,102 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as v;
+
+.wrap { position: relative; }
+
+.bellBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 15px;
+  cursor: pointer;
+  transition: background v.$transition;
+  @include focus-ring;
+
+  &:hover { background: var(--surface-hover); }
+}
+
+.count {
+  position: absolute;
+  top: -4px;
+  inset-inline-end: -4px;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--danger);
+  color: white;
+  font-size: 0.62rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--surface);
+}
+
+.panel {
+  @include card;
+  position: absolute;
+  top: calc(100% + 10px);
+  inset-inline-start: 0;
+  width: 320px;
+  max-height: 380px;
+  overflow-y: auto;
+  padding: v.$space-3;
+  z-index: 60;
+  @include scrollbar-thin;
+}
+
+.panelTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: v.$space-2;
+  padding: 0 4px;
+}
+
+.empty {
+  padding: v.$space-4 v.$space-2;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-faint);
+}
+
+.item {
+  display: block;
+  width: 100%;
+  border: none;
+  background: transparent;
+  text-align: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: v.$radius-sm;
+  transition: background v.$transition;
+
+  &:hover { background: var(--surface-2); }
+  & + & { margin-top: 4px; }
+}
+
+.itemTop { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.itemTitle { font-size: 0.82rem; font-weight: 700; color: var(--text); }
+.itemProject { font-size: 0.7rem; color: var(--text-faint); margin-top: 2px; }
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+.dueSoon { background: var(--warning); }
+.overdue { background: var(--danger); }
+
+.due { font-size: 0.68rem; font-family: v.$font-mono; }
+.dueTextSoon { color: var(--warning); }
+.dueTextOverdue { color: var(--danger); }

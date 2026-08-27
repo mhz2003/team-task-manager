@@ -1,0 +1,78 @@
+@use '../styles/mixins' as *;
+@use '../styles/variables' as v;
+
+.page { max-width: 1120px; margin: 0 auto; padding: v.$space-6 20px; }
+
+.headRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: v.$space-5;
+  gap: 12px;
+}
+
+.heading { font-size: 1.4rem; font-weight: 800; }
+.subheading { color: var(--text-muted); font-size: 0.85rem; margin-top: 2px; }
+
+.newBtn { @include button-primary; }
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: v.$space-3;
+}
+
+.detailHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: v.$space-4;
+  gap: 12px;
+}
+
+.remindersBox {
+  @include card;
+  border-color: var(--warning);
+  background: var(--warning-soft);
+  padding: v.$space-4;
+  margin-bottom: v.$space-5;
+}
+
+.remindersHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--warning);
+  margin-bottom: v.$space-3;
+}
+
+.remindersList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reminderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: v.$radius-sm;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+}
+
+.reminderInfo { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.reminderTitle { font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.reminderProject { color: var(--text-faint); font-size: 0.72rem; flex-shrink: 0; }
+.reminderDue { font-family: v.$font-mono; font-size: 0.7rem; flex-shrink: 0; }
+.reminderDueOverdue { color: var(--danger); font-weight: 700; }
+.reminderDueSoon { color: var(--warning); font-weight: 700; }

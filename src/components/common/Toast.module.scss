@@ -1,0 +1,35 @@
+@use '../../styles/variables' as v;
+
+.stack {
+  position: fixed;
+  bottom: v.$space-5;
+  inset-inline-start: v.$space-5;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-2;
+  max-width: 340px;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: v.$space-2;
+  padding: 12px 16px;
+  border-radius: v.$radius-md;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  box-shadow: var(--shadow-lg);
+  animation: slide 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  backdrop-filter: blur(4px);
+}
+
+.success { background: linear-gradient(135deg, #21A366, #17C3B2); }
+.error { background: linear-gradient(135deg, #E5484D, #C23B4F); }
+.info { background: var(--gradient-brand); }
+
+@keyframes slide {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

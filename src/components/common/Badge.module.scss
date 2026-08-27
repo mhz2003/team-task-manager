@@ -1,0 +1,8 @@
+@use '../../styles/mixins' as *;
+
+.badge { @include badge(var(--text-muted), var(--surface-2)); }
+.slate { @include badge(var(--text-muted), var(--surface-2)); }
+.green { @include badge(var(--success), var(--success-soft)); }
+.amber { @include badge(var(--warning), var(--warning-soft)); }
+.red { @include badge(var(--danger), var(--danger-soft)); }
+.brand { @include badge(var(--primary), var(--primary-soft)); }

@@ -1,0 +1,74 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as v;
+
+.card {
+  @include card;
+  @include card-hover;
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-3;
+  padding: v.$space-4;
+  min-width: 0;
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--gradient-brand);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.names { min-width: 0; overflow: hidden; }
+.name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.username {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: v.$font-mono;
+  direction: ltr;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: v.$space-2;
+  border-top: 1px solid var(--border);
+}
+
+.actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.iconBtn {
+  border: none;
+  background: transparent;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 2px;
+  white-space: nowrap;
+}
+.edit { color: var(--primary); }
+.del { color: var(--danger); }

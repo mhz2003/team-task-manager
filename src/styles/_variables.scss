@@ -1,0 +1,20 @@
+// design tokens used across components
+// (colors themselves live in global.scss as CSS custom properties,
+// so both themes can be swapped at runtime without recompiling)
+
+$font-display: 'Vazirmatn', 'Inter', sans-serif;
+$font-mono: 'JetBrains Mono', 'Vazirmatn', monospace;
+
+$radius-sm: 10px;
+$radius-md: 14px;
+$radius-lg: 20px;
+$radius-pill: 999px;
+
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 24px;
+$space-6: 32px;
+
+$transition: 180ms ease;

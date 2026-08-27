@@ -1,0 +1,52 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as v;
+
+.card {
+  @include card;
+  @include card-hover;
+  padding: v.$space-4;
+  position: relative;
+  overflow: hidden;
+  padding-inline-start: 18px;
+}
+
+.rail {
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+}
+.low { background: var(--text-faint); }
+.medium { background: var(--warning); }
+.high { background: var(--danger); }
+
+.top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+.title { font-weight: 700; font-size: 0.9rem; }
+.desc { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px; }
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  font-family: v.$font-mono;
+  margin-bottom: 12px;
+}
+
+.overdue { color: var(--danger); font-weight: 700; }
+.dueSoon { color: var(--warning); font-weight: 700; }
+
+.bottom { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+
+.statusSelect {
+  @include input-base;
+  width: auto;
+  padding: 6px 10px;
+  font-size: 0.72rem;
+}
+
+.actions { display: flex; gap: 12px; font-size: 0.72rem; }
+.edit { border: none; background: transparent; color: var(--primary); cursor: pointer; font-weight: 700; }
+.del { border: none; background: transparent; color: var(--danger); cursor: pointer; font-weight: 700; }

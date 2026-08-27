@@ -1,0 +1,61 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as v;
+
+.wrap {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: v.$space-5;
+}
+
+.card {
+  @include card;
+  width: 100%;
+  max-width: 380px;
+  padding: v.$space-6 v.$space-5;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0;
+    height: 4px;
+    width: 100%;
+    background: var(--gradient-brand);
+  }
+}
+
+.title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: v.$space-5;
+}
+
+.error {
+  background: var(--danger-soft);
+  color: var(--danger);
+  border-radius: v.$radius-md;
+  padding: 10px 12px;
+  font-size: 0.8rem;
+  margin-bottom: v.$space-3;
+}
+
+.footer {
+  margin-top: v.$space-4;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.footer a { color: var(--primary); font-weight: 700; }
+
+.submit { @include button-primary; width: 100%; padding: 12px; margin-top: 4px; }
